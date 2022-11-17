@@ -17,6 +17,26 @@
 		DC0404512924E03F00BAAB1A /* ConverterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04044F2924E03F00BAAB1A /* ConverterViewController.swift */; };
 		DC0404522924E03F00BAAB1A /* ConverterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC0404502924E03F00BAAB1A /* ConverterViewController.xib */; };
 		DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC0404532924E05400BAAB1A /* ConverterViewModel.swift */; };
+		DC04045C292626B100BAAB1A /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040457292626B100BAAB1A /* Enums.swift */; };
+		DC04045D292626B100BAAB1A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040458292626B100BAAB1A /* NetworkManager.swift */; };
+		DC04045E292626B100BAAB1A /* NetworkLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040459292626B100BAAB1A /* NetworkLogger.swift */; };
+		DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04045A292626B100BAAB1A /* NetworkReachability.swift */; };
+		DC040460292626B100BAAB1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04045B292626B100BAAB1A /* EndPoint.swift */; };
+		DC040462292626BE00BAAB1A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040461292626BE00BAAB1A /* Environment.swift */; };
+		DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */; };
+		DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */; };
+		DC04046A292626CA00BAAB1A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040466292626CA00BAAB1A /* UIView+Extensions.swift */; };
+		DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */; };
+		DC04046D292626D600BAAB1A /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04046C292626D600BAAB1A /* DataState.swift */; };
+		DC04046F292626E000BAAB1A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04046E292626E000BAAB1A /* Utils.swift */; };
+		DC0404722926270600BAAB1A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404712926270600BAAB1A /* Alamofire */; };
+		DC0404752926271B00BAAB1A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404742926271B00BAAB1A /* Kingfisher */; };
+		DC0404782926276100BAAB1A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */; };
+		DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047A292627A800BAAB1A /* NVActivityIndicatorView */; };
+		DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */; };
+		DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04048C2926282A00BAAB1A /* ErrorResponse.swift */; };
+		DC040492292628A200BAAB1A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC040491292628A200BAAB1A /* RxCocoa */; };
+		DC040494292628A200BAAB1A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC040493292628A200BAAB1A /* RxSwift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +71,19 @@
 		DC04044F2924E03F00BAAB1A /* ConverterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewController.swift; sourceTree = "<group>"; };
 		DC0404502924E03F00BAAB1A /* ConverterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConverterViewController.xib; sourceTree = "<group>"; };
 		DC0404532924E05400BAAB1A /* ConverterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterViewModel.swift; sourceTree = "<group>"; };
+		DC040457292626B100BAAB1A /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DC040458292626B100BAAB1A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DC040459292626B100BAAB1A /* NetworkLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkLogger.swift; sourceTree = "<group>"; };
+		DC04045A292626B100BAAB1A /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
+		DC04045B292626B100BAAB1A /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		DC040461292626BE00BAAB1A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		DC040466292626CA00BAAB1A /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
+		DC04046C292626D600BAAB1A /* DataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
+		DC04046E292626E000BAAB1A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		DC04048C2926282A00BAAB1A /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +91,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC040492292628A200BAAB1A /* RxCocoa in Frameworks */,
+				DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */,
+				DC0404752926271B00BAAB1A /* Kingfisher in Frameworks */,
+				DC0404722926270600BAAB1A /* Alamofire in Frameworks */,
+				DC0404782926276100BAAB1A /* IQKeyboardManagerSwift in Frameworks */,
+				DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */,
+				DC040494292628A200BAAB1A /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,6 +176,7 @@
 		DC0404492924DFD500BAAB1A /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				DC0404892926282A00BAAB1A /* Entities */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -151,9 +192,14 @@
 		DC04044B2924DFE200BAAB1A /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				DC040455292626B100BAAB1A /* Infrastructure */,
 				DC0404182924DE1600BAAB1A /* AppDelegate.swift */,
+				DC040461292626BE00BAAB1A /* Environment.swift */,
 				DC04041A2924DE1600BAAB1A /* SceneDelegate.swift */,
+				DC040463292626CA00BAAB1A /* Extensions */,
 				DC0404212924DE1700BAAB1A /* Assets.xcassets */,
+				DC04046C292626D600BAAB1A /* DataState.swift */,
+				DC04046E292626E000BAAB1A /* Utils.swift */,
 				DC0404232924DE1700BAAB1A /* LaunchScreen.storyboard */,
 				DC0404262924DE1700BAAB1A /* Info.plist */,
 			);
@@ -186,6 +232,45 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DC040455292626B100BAAB1A /* Infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				DC040456292626B100BAAB1A /* Networking */,
+			);
+			path = Infrastructure;
+			sourceTree = "<group>";
+		};
+		DC040456292626B100BAAB1A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				DC040457292626B100BAAB1A /* Enums.swift */,
+				DC040458292626B100BAAB1A /* NetworkManager.swift */,
+				DC040459292626B100BAAB1A /* NetworkLogger.swift */,
+				DC04045A292626B100BAAB1A /* NetworkReachability.swift */,
+				DC04045B292626B100BAAB1A /* EndPoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		DC040463292626CA00BAAB1A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */,
+				DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */,
+				DC040466292626CA00BAAB1A /* UIView+Extensions.swift */,
+				DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		DC0404892926282A00BAAB1A /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				DC04048C2926282A00BAAB1A /* ErrorResponse.swift */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -202,6 +287,15 @@
 			dependencies = (
 			);
 			name = CurrencyConverter;
+			packageProductDependencies = (
+				DC0404712926270600BAAB1A /* Alamofire */,
+				DC0404742926271B00BAAB1A /* Kingfisher */,
+				DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */,
+				DC04047A292627A800BAAB1A /* NVActivityIndicatorView */,
+				DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */,
+				DC040491292628A200BAAB1A /* RxCocoa */,
+				DC040493292628A200BAAB1A /* RxSwift */,
+			);
 			productName = CurrencyConverter;
 			productReference = DC0404152924DE1600BAAB1A /* CurrencyConverter.app */;
 			productType = "com.apple.product-type.application";
@@ -274,6 +368,13 @@
 				Base,
 			);
 			mainGroup = DC04040C2924DE1600BAAB1A;
+			packageReferences = (
+				DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = DC0404162924DE1600BAAB1A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -317,10 +418,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC04045E292626B100BAAB1A /* NetworkLogger.swift in Sources */,
+				DC04045D292626B100BAAB1A /* NetworkManager.swift in Sources */,
 				DC0404192924DE1600BAAB1A /* AppDelegate.swift in Sources */,
+				DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */,
+				DC040460292626B100BAAB1A /* EndPoint.swift in Sources */,
+				DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */,
+				DC04046A292626CA00BAAB1A /* UIView+Extensions.swift in Sources */,
+				DC04046F292626E000BAAB1A /* Utils.swift in Sources */,
 				DC04041B2924DE1600BAAB1A /* SceneDelegate.swift in Sources */,
+				DC04045C292626B100BAAB1A /* Enums.swift in Sources */,
 				DC0404512924E03F00BAAB1A /* ConverterViewController.swift in Sources */,
+				DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */,
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
+				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,
+				DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */,
+				DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */,
+				DC040462292626BE00BAAB1A /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -662,6 +776,87 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		DC0404712926270600BAAB1A /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		DC0404742926271B00BAAB1A /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
+		};
+		DC04047A292627A800BAAB1A /* NVActivityIndicatorView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorView;
+		};
+		DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
+			productName = NVActivityIndicatorViewExtended;
+		};
+		DC040491292628A200BAAB1A /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		DC040493292628A200BAAB1A /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = DC04040D2924DE1600BAAB1A /* Project object */;
 }

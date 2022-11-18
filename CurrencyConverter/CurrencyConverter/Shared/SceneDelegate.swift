@@ -27,7 +27,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     }
     
     func createConverterScreen() -> UINavigationController {
-        let viewModel = ConverterViewModel()
+        let repository = ConverterRepository(networkManager: NetworkManager.shared)
+        let viewModel = ConverterViewModel(repository: repository)
         let controller = ConverterViewController(viewModel: viewModel)
         let navigation = UINavigationController(rootViewController: controller)
         return navigation

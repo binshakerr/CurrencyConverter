@@ -18,12 +18,13 @@ protocol EndPoint {
 extension EndPoint {
     
     func makeDefaultHeaders() -> [String: String] {
-        return [HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue]
+        return [HTTPHeaderField.contentType.rawValue: ContentType.json.rawValue,
+                HTTPHeaderField.apiKey.rawValue: Environment.apiKey]
     }
     
     func makeURLRequest() throws -> URLRequest {
         // URL
-        let url = try Environment.apiURL.asURL()
+        let url = try Environment.baseURL.asURL()
         var urlRequest = URLRequest(url: url.appendingPathComponent(path))
         
         // HTTP Method

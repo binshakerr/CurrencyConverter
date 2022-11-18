@@ -53,34 +53,32 @@ extension NetworkManager: NetworkManagerType {
             .validate()
             .responseJSON { result in
                 let statusCode = result.response?.statusCode ?? 0
+                let decoder = JSONDecoder()
                 
                 switch result.result {
                 case .success:
-                    switch statusCode {
-                    case 200...299:
-                        do {
-                            guard let data = result.data else { return }
-                            let result = try JSONDecoder().decode(type.self, from: data)
-                            completion(.success(result))
-                        } catch let error {
-                            completion(.failure(error))
-                        }
-                    default: // Custom error
-                        do {
-                            guard let data = result.data else { return }
-                            let result = try JSONDecoder().decode(ErrorResponse.self, from: data)
-                            let userInfo: [String : Any] = [
-                                NSLocalizedDescriptionKey:  NSLocalizedString("Error code: \(statusCode)", value: result.message, comment: "") ,
-                            ]
-                            let error = NSError(domain: "", code: 0, userInfo: userInfo)
-                            completion(.failure(error))
-                        } catch let error {
-                            completion(.failure(error))
-                        }
+                    do {
+                        guard let data = result.data else { return }
+                        let result = try decoder.decode(type.self, from: data)
+                        completion(.success(result))
+                    } catch let error {
+                        completion(.failure(error))
                     }
-                    
                 case .failure(let error):
-                    completion(.failure(error))
+                    do {
+                        guard let data = result.data else {
+                            completion(.failure(error))
+                            return
+                        }
+                        let result = try decoder.decode(ErrorResponse.self, from: data)
+                        let userInfo: [String : Any] = [
+                            NSLocalizedDescriptionKey:  NSLocalizedString("Error code: \(statusCode)", value: result.message, comment: "") ,
+                        ]
+                        let error = NSError(domain: "", code: 0, userInfo: userInfo)
+                        completion(.failure(error))
+                    } catch let error {
+                        completion(.failure(error))
+                    }
                 }
             }
     }

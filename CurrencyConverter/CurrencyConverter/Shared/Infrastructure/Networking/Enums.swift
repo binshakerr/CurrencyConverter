@@ -14,6 +14,7 @@ enum HTTPHeaderField: String {
     case acceptEncoding = "Accept-Encoding"
     case userAgent = "User-Agent"
     case version = "Version"
+    case apiKey = "apikey"
 }
 
 enum ContentType: String {

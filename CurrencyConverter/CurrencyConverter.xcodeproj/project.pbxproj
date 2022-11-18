@@ -40,6 +40,10 @@
 		DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04048C2926282A00BAAB1A /* ErrorResponse.swift */; };
 		DC040492292628A200BAAB1A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC040491292628A200BAAB1A /* RxCocoa */; };
 		DC040494292628A200BAAB1A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC040493292628A200BAAB1A /* RxSwift */; };
+		DC8FA58F29276C2500AEDB04 /* ConverterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA58E29276C2500AEDB04 /* ConverterService.swift */; };
+		DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */; };
+		DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */; };
+		DC8FA595292775C000AEDB04 /* CurrencySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +100,10 @@
 		DC04046C292626D600BAAB1A /* DataState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataState.swift; sourceTree = "<group>"; };
 		DC04046E292626E000BAAB1A /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		DC04048C2926282A00BAAB1A /* ErrorResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorResponse.swift; sourceTree = "<group>"; };
+		DC8FA58E29276C2500AEDB04 /* ConverterService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterService.swift; sourceTree = "<group>"; };
+		DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterRepository.swift; sourceTree = "<group>"; };
+		DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesContainerResponse.swift; sourceTree = "<group>"; };
+		DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySymbol.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +161,6 @@
 				43CD4CBE3B6EA3905AC59FC2 /* Pods-CurrencyConverterTests.debug.xcconfig */,
 				49853D664BB8889F8027BC0B /* Pods-CurrencyConverterTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -210,6 +217,8 @@
 		DC0404482924DFCD00BAAB1A /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				DC8FA58D292768C800AEDB04 /* Repositories */,
+				DC8FA58C292768BA00AEDB04 /* Services */,
 			);
 			path = Business;
 			sourceTree = "<group>";
@@ -308,8 +317,26 @@
 			isa = PBXGroup;
 			children = (
 				DC04048C2926282A00BAAB1A /* ErrorResponse.swift */,
+				DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */,
+				DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		DC8FA58C292768BA00AEDB04 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA58E29276C2500AEDB04 /* ConverterService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		DC8FA58D292768C800AEDB04 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */,
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -415,11 +442,11 @@
 			);
 			mainGroup = DC04040C2924DE1600BAAB1A;
 			packageReferences = (
-				DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire.git" */,
-				DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher.git" */,
-				DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */,
-				DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */,
-				DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift.git" */,
+				DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */,
+				DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
+				DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = DC0404162924DE1600BAAB1A /* Products */;
 			projectDirPath = "";
@@ -570,6 +597,7 @@
 				DC04045E292626B100BAAB1A /* NetworkLogger.swift in Sources */,
 				DC04045D292626B100BAAB1A /* NetworkManager.swift in Sources */,
 				DC0404192924DE1600BAAB1A /* AppDelegate.swift in Sources */,
+				DC8FA595292775C000AEDB04 /* CurrencySymbol.swift in Sources */,
 				DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */,
 				DC040460292626B100BAAB1A /* EndPoint.swift in Sources */,
 				DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */,
@@ -582,7 +610,10 @@
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
 				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,
 				DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */,
+				DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */,
+				DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */,
 				DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */,
+				DC8FA58F29276C2500AEDB04 /* ConverterService.swift in Sources */,
 				DC040462292626BE00BAAB1A /* Environment.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -933,7 +964,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire.git" */ = {
+		DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
 			requirement = {
@@ -941,7 +972,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher.git" */ = {
+		DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
 			requirement = {
@@ -949,7 +980,7 @@
 				minimumVersion = 7.0.0;
 			};
 		};
-		DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */ = {
+		DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
 			requirement = {
@@ -957,7 +988,7 @@
 				minimumVersion = 6.0.0;
 			};
 		};
-		DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */ = {
+		DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ninjaprox/NVActivityIndicatorView.git";
 			requirement = {
@@ -965,7 +996,7 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift.git" */ = {
+		DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
 			requirement = {
@@ -978,37 +1009,37 @@
 /* Begin XCSwiftPackageProductDependency section */
 		DC0404712926270600BAAB1A /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire.git" */;
+			package = DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		DC0404742926271B00BAAB1A /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher.git" */;
+			package = DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
 		DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager.git" */;
+			package = DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
 			productName = IQKeyboardManagerSwift;
 		};
 		DC04047A292627A800BAAB1A /* NVActivityIndicatorView */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
+			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorView;
 		};
 		DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView.git" */;
+			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
 		};
 		DC040491292628A200BAAB1A /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
 		DC040493292628A200BAAB1A /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift.git" */;
+			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

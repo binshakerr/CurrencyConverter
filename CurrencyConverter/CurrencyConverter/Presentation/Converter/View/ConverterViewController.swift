@@ -20,7 +20,7 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var toValueTextField: UITextField!
     
     //MARK: - Properties
-    private let viewModel: ConverterViewModel
+    private let viewModel: ConverterViewModelProtocol
     private let disposeBag = DisposeBag()
     private var fromCurrencyDropdown: DropDown!
     private var toCurrencyDropdown: DropDown!
@@ -28,7 +28,7 @@ class ConverterViewController: UIViewController {
     private var toDropDownExpanded = false
     
     //MARK: - Life cycle
-    init(viewModel: ConverterViewModel) {
+    init(viewModel: ConverterViewModelProtocol) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -39,14 +39,15 @@ class ConverterViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
+        bindViewModel()
+        viewModel.getCurrencies()
     }
     
     //MARK: -
     
     private func setupUI() {
-        navigationItem.title = "Currency Converter"
+        navigationItem.title = viewModel.outputs.screenTitle
         setupDropdowns()
     }
     
@@ -56,7 +57,6 @@ class ConverterViewController: UIViewController {
         
         fromCurrencyDropdown = DropDown()
         fromCurrencyDropdown.anchorView = fromCurrencyDropdownTextField
-        fromCurrencyDropdown.dataSource = ["Car", "Motorcycle", "Truck"]
         fromCurrencyDropdown.selectionAction = { [weak self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self?.fromCurrencyDropdownTextField.text = item
@@ -67,7 +67,6 @@ class ConverterViewController: UIViewController {
         
         toCurrencyDropdown = DropDown()
         toCurrencyDropdown.anchorView = toCurrencyDropdownTextField
-        toCurrencyDropdown.dataSource = ["Cat", "Dog", "Horse"]
         toCurrencyDropdown.selectionAction = { [weak self] (index: Int, item: String) in
             print("Selected item: \(item) at index: \(index)")
             self?.toCurrencyDropdownTextField.text = item
@@ -92,6 +91,51 @@ class ConverterViewController: UIViewController {
         } else {
             dropdown.show()
         }
+    }
+    
+    private func bindViewModel() {
+        bindInputs()
+        bindOutputs()
+    }
+    
+    func bindOutputs() {
+       
+        viewModel.outputs.stateSubject
+            .subscribe(onNext:  { [weak self] state in
+            guard let self = self else { return }
+            state == .loading ? self.startLoading() : self.stopLoading()
+        })
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.errorSubject
+            .subscribe(onNext:  { [weak self] message in
+            guard let self = self, let message = message else { return }
+            self.showSimpleAlert(title: "Error", message: message)
+        })
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.dataSubject
+            .subscribe(onNext:  { [weak self] symbols in
+                guard let self = self else { return }
+                let strings = symbols.map {
+                    "\($0.symbol) - \($0.fullName)"
+                }
+                self.fromCurrencyDropdown.dataSource = strings
+                self.toCurrencyDropdown.dataSource = strings
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func bindInputs() {
+//        searchController.searchBar.rx.searchButtonClicked
+//            .compactMap {self.searchController.searchBar.text}
+//            .bind(to: viewModel.inputs.searchSubject)
+//            .disposed(by: disposeBag)
+//
+//        searchTable.rx.itemSelected.subscribe(onNext: { [weak self] item in
+//            self?.openPhotoDetails(item.row)
+//        })
+//            .disposed(by: disposeBag)
     }
     
     

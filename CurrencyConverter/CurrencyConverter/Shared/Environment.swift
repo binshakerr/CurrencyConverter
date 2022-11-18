@@ -13,6 +13,7 @@ public enum Environment {
     enum Keys {
         enum Plist {
             static let baseURL = "BASE_URL"
+            static let apiKey = "API_KEY"
         }
     }
     
@@ -32,9 +33,11 @@ public enum Environment {
         return value
     }()
     
-    
-   //MARK: - other values
-    static let apiURL: String = {
-        return baseURL + "/public/collection/v1"
+    static let apiKey: String = {
+        guard let value = Environment.infoDictionary[Keys.Plist.apiKey] as? String else {
+            fatalError("API Key not set in plist for this environment")
+        }
+        return value
     }()
+    
 }

@@ -26,7 +26,6 @@
 		DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04045A292626B100BAAB1A /* NetworkReachability.swift */; };
 		DC040460292626B100BAAB1A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04045B292626B100BAAB1A /* EndPoint.swift */; };
 		DC040462292626BE00BAAB1A /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040461292626BE00BAAB1A /* Environment.swift */; };
-		DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */; };
 		DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */; };
 		DC04046A292626CA00BAAB1A /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040466292626CA00BAAB1A /* UIView+Extensions.swift */; };
 		DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */; };
@@ -97,7 +96,6 @@
 		DC04045A292626B100BAAB1A /* NetworkReachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkReachability.swift; sourceTree = "<group>"; };
 		DC04045B292626B100BAAB1A /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		DC040461292626BE00BAAB1A /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		DC040466292626CA00BAAB1A /* UIView+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+AutoLayout.swift"; sourceTree = "<group>"; };
@@ -314,7 +312,6 @@
 		DC040463292626CA00BAAB1A /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				DC040464292626CA00BAAB1A /* UIImageView+Extension.swift */,
 				DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */,
 				DC040466292626CA00BAAB1A /* UIView+Extensions.swift */,
 				DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */,
@@ -619,7 +616,6 @@
 				DC04041B2924DE1600BAAB1A /* SceneDelegate.swift in Sources */,
 				DC04045C292626B100BAAB1A /* Enums.swift in Sources */,
 				DC0404512924E03F00BAAB1A /* ConverterViewController.swift in Sources */,
-				DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */,
 				DC8FA59F2927D5F100AEDB04 /* ConvertUnit.swift in Sources */,
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
 				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,

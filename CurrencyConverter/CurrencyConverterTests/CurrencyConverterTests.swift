@@ -72,11 +72,53 @@ final class CurrencyConverterTests: XCTestCase {
     }
     
     func test_convertCurrency_success() {
+        // Given
+        convertUnit = ConvertUnit(from: "USD", to: "EGP", amount: 1.0)
+        conversionData = Utils.MockResponseType.ConvertSuccessResponse.sampleDataFor(self)
+        let decodedItem = try? JSONDecoder().decode(ConvertResult.self, from: conversionData)
+        converterRepository.convertStubData = decodedItem
         
+        // When
+        let convertObserver = scheduler.createObserver(Double.self)
+        converterViewModel
+            .outputs
+            .conversionSubject
+            .bind(to: convertObserver)
+            .disposed(by: disposeBag)
+        scheduler
+            .createColdObservable([.next(1, convertUnit)])
+            .bind(to: converterViewModel.inputs.converterUnitSubject)
+            .disposed(by: disposeBag)
+        scheduler.start()
+
+        // Then
+        let convertElement = convertObserver.events.last?.value.element
+        XCTAssertEqual(convertElement, 24.514904)
     }
 
     func test_convertCurrency_wrongAmount_failure() {
+        // Given
+        convertUnit = ConvertUnit(from: "USD", to: "EGP", amount: 0)
+        conversionData = Utils.MockResponseType.ConvertWrongAmountResponse.sampleDataFor(self)
+        let decodedItem = try? JSONDecoder().decode(ConvertResult.self, from: conversionData)
+        converterRepository.convertStubData = decodedItem
         
+        // When
+        let convertObserver = scheduler.createObserver(Double.self)
+        converterViewModel
+            .outputs
+            .conversionSubject
+            .bind(to: convertObserver)
+            .disposed(by: disposeBag)
+        scheduler
+            .createColdObservable([.next(1, convertUnit)])
+            .bind(to: converterViewModel.inputs.converterUnitSubject)
+            .disposed(by: disposeBag)
+        scheduler.start()
+
+        // Then
+        let convertElement = convertObserver.events.last?.value.element
+        XCTAssertEqual(convertElement, 0)
     }
     
     func test_historyViewModel_initialState() {

@@ -47,6 +47,14 @@
 		DC8FA59B29277CDA00AEDB04 /* ConvertQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */; };
 		DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59C2927841300AEDB04 /* Parser.swift */; };
 		DC8FA59F2927D5F100AEDB04 /* ConvertUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */; };
+		DC8FA5A52927E31F00AEDB04 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5A32927E31F00AEDB04 /* HistoryViewController.swift */; };
+		DC8FA5A62927E31F00AEDB04 /* HistoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5A42927E31F00AEDB04 /* HistoryViewController.xib */; };
+		DC8FA5A82927E33500AEDB04 /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5A72927E33500AEDB04 /* HistoryViewModel.swift */; };
+		DC8FA5AB2927E99A00AEDB04 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5AA2927E99A00AEDB04 /* Date+Extensions.swift */; };
+		DC8FA5AD2927F05E00AEDB04 /* HistoryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5AC2927F05E00AEDB04 /* HistoryResponse.swift */; };
+		DC8FA5AF2927F11000AEDB04 /* HistoryRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5AE2927F11000AEDB04 /* HistoryRate.swift */; };
+		DC8FA5B22927F7E300AEDB04 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5B02927F7E300AEDB04 /* HistoryCell.swift */; };
+		DC8FA5B32927F7E300AEDB04 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5B12927F7E300AEDB04 /* HistoryCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +119,14 @@
 		DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertQuery.swift; sourceTree = "<group>"; };
 		DC8FA59C2927841300AEDB04 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 		DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertUnit.swift; sourceTree = "<group>"; };
+		DC8FA5A32927E31F00AEDB04 /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		DC8FA5A42927E31F00AEDB04 /* HistoryViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryViewController.xib; sourceTree = "<group>"; };
+		DC8FA5A72927E33500AEDB04 /* HistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewModel.swift; sourceTree = "<group>"; };
+		DC8FA5AA2927E99A00AEDB04 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
+		DC8FA5AC2927F05E00AEDB04 /* HistoryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryResponse.swift; sourceTree = "<group>"; };
+		DC8FA5AE2927F11000AEDB04 /* HistoryRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRate.swift; sourceTree = "<group>"; };
+		DC8FA5B02927F7E300AEDB04 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
+		DC8FA5B12927F7E300AEDB04 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +256,7 @@
 		DC04044A2924DFDB00BAAB1A /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
+				DC8FA5A02927E2F700AEDB04 /* History */,
 				DC04044C2924DFEE00BAAB1A /* Converter */,
 			);
 			path = Presentation;
@@ -315,6 +332,7 @@
 				DC040465292626CA00BAAB1A /* UIViewController+Extensions.swift */,
 				DC040466292626CA00BAAB1A /* UIView+Extensions.swift */,
 				DC040467292626CA00BAAB1A /* UIView+AutoLayout.swift */,
+				DC8FA5AA2927E99A00AEDB04 /* Date+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -329,6 +347,8 @@
 				DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */,
 				DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */,
 				DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */,
+				DC8FA5AC2927F05E00AEDB04 /* HistoryResponse.swift */,
+				DC8FA5AE2927F11000AEDB04 /* HistoryRate.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -347,6 +367,34 @@
 				DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		DC8FA5A02927E2F700AEDB04 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5A22927E30700AEDB04 /* ViewModel */,
+				DC8FA5A12927E30200AEDB04 /* View */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		DC8FA5A12927E30200AEDB04 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5A32927E31F00AEDB04 /* HistoryViewController.swift */,
+				DC8FA5A42927E31F00AEDB04 /* HistoryViewController.xib */,
+				DC8FA5B02927F7E300AEDB04 /* HistoryCell.swift */,
+				DC8FA5B12927F7E300AEDB04 /* HistoryCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		DC8FA5A22927E30700AEDB04 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5A72927E33500AEDB04 /* HistoryViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -472,9 +520,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8FA5B32927F7E300AEDB04 /* HistoryCell.xib in Resources */,
 				DC0404252924DE1700BAAB1A /* LaunchScreen.storyboard in Resources */,
 				DC0404522924E03F00BAAB1A /* ConverterViewController.xib in Resources */,
 				DC0404222924DE1700BAAB1A /* Assets.xcassets in Resources */,
+				DC8FA5A62927E31F00AEDB04 /* HistoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,11 +656,14 @@
 				DC04045D292626B100BAAB1A /* NetworkManager.swift in Sources */,
 				DC0404192924DE1600BAAB1A /* AppDelegate.swift in Sources */,
 				DC8FA595292775C000AEDB04 /* CurrencySymbol.swift in Sources */,
+				DC8FA5AF2927F11000AEDB04 /* HistoryRate.swift in Sources */,
+				DC8FA5B22927F7E300AEDB04 /* HistoryCell.swift in Sources */,
 				DC8FA59729277C1E00AEDB04 /* ConvertResult.swift in Sources */,
 				DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */,
 				DC040460292626B100BAAB1A /* EndPoint.swift in Sources */,
 				DC8FA59929277CC900AEDB04 /* ConvertInfo.swift in Sources */,
 				DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */,
+				DC8FA5AB2927E99A00AEDB04 /* Date+Extensions.swift in Sources */,
 				DC04046A292626CA00BAAB1A /* UIView+Extensions.swift in Sources */,
 				DC04046F292626E000BAAB1A /* Utils.swift in Sources */,
 				DC04041B2924DE1600BAAB1A /* SceneDelegate.swift in Sources */,
@@ -619,9 +672,12 @@
 				DC8FA59F2927D5F100AEDB04 /* ConvertUnit.swift in Sources */,
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
 				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,
+				DC8FA5A52927E31F00AEDB04 /* HistoryViewController.swift in Sources */,
 				DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */,
+				DC8FA5A82927E33500AEDB04 /* HistoryViewModel.swift in Sources */,
 				DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */,
 				DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */,
+				DC8FA5AD2927F05E00AEDB04 /* HistoryResponse.swift in Sources */,
 				DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */,
 				DC8FA59B29277CDA00AEDB04 /* ConvertQuery.swift in Sources */,
 				DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */,

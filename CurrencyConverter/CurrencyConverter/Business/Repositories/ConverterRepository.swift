@@ -11,6 +11,7 @@ import RxSwift
 protocol ConverterRepositoryType {
     func getCurrencies() -> Observable<[CurrencySymbol]>
     func convertCurrency(from: String, to: String, amount: Float) -> Observable<ConvertResult>
+    func getHistory(startDate: String, endDate: String, base: String, symbols: String) -> Observable<HistoryResponse>
 }
 
 
@@ -48,6 +49,21 @@ extension ConverterRepository: ConverterRepositoryType {
         return Observable.create { [weak self] observer in
             let request = ConverterService.convert(amount: amount, from: from, to: to)
             self?.networkManager.request(request, type: ConvertResult.self) { result in
+                switch result {
+                case .success(let response):
+                    observer.onNext(response)
+                case .failure(let error):
+                    observer.onError(error)
+                }
+            }
+            return Disposables.create()
+        }
+    }
+    
+    func getHistory(startDate: String, endDate: String, base: String, symbols: String) -> Observable<HistoryResponse> {
+        return Observable.create { [weak self] observer in
+            let request = ConverterService.timeseries(start_date: startDate, end_date: endDate, base: base, symbols: symbols)
+            self?.networkManager.request(request, type: HistoryResponse.self) { result in
                 switch result {
                 case .success(let response):
                     observer.onNext(response)

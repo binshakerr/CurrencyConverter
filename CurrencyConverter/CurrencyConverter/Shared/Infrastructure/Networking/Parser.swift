@@ -40,9 +40,11 @@ extension Parser: ParserType {
                     let error = NSError(domain: "", code: 0, userInfo: userInfo)
                     completion(.failure(error))
                 } catch let error {
+                    print(error)
                     completion(.failure(error))
                 }
                 
+                print(error)
                 completion(.failure(error))
             }
         case .failure(let error):
@@ -58,6 +60,7 @@ extension Parser: ParserType {
                 let error = NSError(domain: "", code: 0, userInfo: userInfo)
                 completion(.failure(error))
             } catch let error {
+                print(error)
                 completion(.failure(error))
             }
         }

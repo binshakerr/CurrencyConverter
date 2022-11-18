@@ -11,6 +11,7 @@ import Alamofire
 enum ConverterService {
     case symbols
     case convert(amount: Float, from: String, to: String)
+    case timeseries(start_date: String, end_date: String, base: String, symbols: String)
 }
 
 extension ConverterService: EndPoint {
@@ -21,6 +22,8 @@ extension ConverterService: EndPoint {
             return .get
         case .convert:
             return .get
+        case .timeseries:
+            return .get
         }
     }
     
@@ -30,6 +33,8 @@ extension ConverterService: EndPoint {
             return "/symbols"
         case .convert:
             return "/convert"
+        case .timeseries:
+            return "/timeseries"
         }
     }
     
@@ -41,6 +46,14 @@ extension ConverterService: EndPoint {
             ["amount": amount,
              "from": from,
              "to": to]
+            return parameters
+            
+        case let .timeseries(start_date, end_date, base, symbols):
+            let parameters: [String: Any] =
+            ["start_date": start_date,
+             "end_date": end_date,
+             "base": base,
+             "symbols": symbols]
             return parameters
             
         case .symbols:

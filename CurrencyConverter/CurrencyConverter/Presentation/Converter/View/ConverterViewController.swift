@@ -18,6 +18,7 @@ class ConverterViewController: UIViewController {
     @IBOutlet weak var swapCurrencyButton: UIButton!
     @IBOutlet weak var fromValueTextField: UITextField!
     @IBOutlet weak var toValueTextField: UITextField!
+    @IBOutlet weak var detailsButton: UIButton!
     
     //MARK: - Properties
     private let viewModel: ConverterViewModelProtocol
@@ -26,7 +27,18 @@ class ConverterViewController: UIViewController {
     private var toCurrencyDropdown: DropDown!
     private var fromDropDownExpanded = false
     private var toDropDownExpanded = false
-    private var convertUnit = ConvertUnit(from: "", to: "", amount: 1.0)
+    private var convertUnit = ConvertUnit(from: "", to: "", amount: 1.0) {
+        didSet {
+            guard convertUnit.from.suffix(3).count > 0 &&
+            convertUnit.to.suffix(3).count > 0 &&
+            convertUnit.amount > 0 else {
+                changeDetailsButtonApperance(enabled: false)
+                return
+            }
+            
+            changeDetailsButtonApperance(enabled: true)
+        }
+    }
     
     //MARK: - Life cycle
     init(viewModel: ConverterViewModelProtocol) {
@@ -50,6 +62,7 @@ class ConverterViewController: UIViewController {
     private func setupUI() {
         navigationItem.title = viewModel.outputs.screenTitle
         setupDropdowns()
+        changeDetailsButtonApperance(enabled: false)
     }
     
     private func setupDropdowns() {
@@ -137,6 +150,18 @@ class ConverterViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
+    private func changeDetailsButtonApperance(enabled: Bool) {
+        detailsButton.isUserInteractionEnabled = enabled
+        detailsButton.backgroundColor = enabled ? .systemIndigo: .gray
+    }
+    
+    private func navigateToDetails() {
+        let repository = ConverterRepository(networkManager: NetworkManager.shared)
+        let viewModel = HistoryViewModel(repository: repository, convertUnit: convertUnit)
+        let controller = HistoryViewController(viewModel: viewModel)
+        navigationController?.pushViewController(controller, animated: true)
+    }
+    
     
     //MARK: - Actions
     @IBAction func swapButtonPressed(_ sender: Any) {
@@ -158,4 +183,9 @@ class ConverterViewController: UIViewController {
         convertUnit.amount = ((fromValueTextField.text ?? "") as NSString).floatValue
         viewModel.inputs.converterUnitSubject.accept(convertUnit)
     }
+    
+    @IBAction func detailsButtonPressed(_ sender: Any) {
+        navigateToDetails()
+    }
+    
 }

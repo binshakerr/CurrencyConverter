@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ConverterViewController" customModule="CurrencyConverter" customModuleProvider="target">
             <connections>
+                <outlet property="detailsButton" destination="uEk-7S-M5Z" id="y3A-gP-Yrz"/>
                 <outlet property="fromCurrencyDropdownTextField" destination="aTp-VB-yeB" id="yCs-Gg-JSJ"/>
                 <outlet property="fromValueTextField" destination="1lq-qz-S1P" id="jLb-jG-7cq"/>
                 <outlet property="swapCurrencyButton" destination="5uS-LZ-Gqv" id="cev-LZ-LTE"/>
@@ -25,33 +26,37 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="wUR-5V-ebU">
-                    <rect key="frame" x="24" y="119" width="345" height="88.333333333333314"/>
+                    <rect key="frame" x="24" y="119" width="345" height="88"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FzA-ay-4bb">
-                            <rect key="frame" x="0.0" y="0.0" width="345" height="34.333333333333336"/>
+                            <rect key="frame" x="0.0" y="0.0" width="345" height="34"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="From" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTp-VB-yeB">
-                                    <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="34.333333333333336"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5uS-LZ-Gqv">
-                                    <rect key="frame" x="118.33333333333334" y="0.0" width="108.33333333333334" height="34.333333333333336"/>
-                                    <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain" title="Swap"/>
+                                    <rect key="frame" x="118.33333333333334" y="0.0" width="108.33333333333334" height="34"/>
+                                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Swap">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
                                     <connections>
                                         <action selector="swapButtonPressed:" destination="-1" eventType="touchUpInside" id="MEg-7Z-nDx"/>
                                     </connections>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="To" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eML-AW-yWe">
-                                    <rect key="frame" x="236.66666666666669" y="0.0" width="108.33333333333337" height="34.333333333333336"/>
+                                    <rect key="frame" x="236.66666666666671" y="0.0" width="108.33333333333334" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
                                 </textField>
                             </subviews>
                         </stackView>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VAU-dQ-ucM">
-                            <rect key="frame" x="0.0" y="54.333333333333343" width="345" height="34"/>
+                            <rect key="frame" x="0.0" y="54" width="345" height="34"/>
                             <subviews>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1lq-qz-S1P">
                                     <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="34"/>
@@ -62,7 +67,7 @@
                                     </connections>
                                 </textField>
                                 <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lqP-xy-QCr">
-                                    <rect key="frame" x="236.66666666666669" y="0.0" width="108.33333333333337" height="34"/>
+                                    <rect key="frame" x="236.66666666666671" y="0.0" width="108.33333333333334" height="34"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits" keyboardType="numberPad" enablesReturnKeyAutomatically="YES"/>
                                 </textField>
@@ -74,11 +79,27 @@
                         <constraint firstItem="1lq-qz-S1P" firstAttribute="trailing" secondItem="aTp-VB-yeB" secondAttribute="trailing" id="hIw-kA-iYc"/>
                     </constraints>
                 </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEk-7S-M5Z">
+                    <rect key="frame" x="142.33333333333334" y="257" width="108.33333333333334" height="34"/>
+                    <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Details">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="detailsButtonPressed:" destination="-1" eventType="touchUpInside" id="zL2-Ww-NCQ"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="uEk-7S-M5Z" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Fm-TR-5FJ"/>
                 <constraint firstItem="wUR-5V-ebU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="60" id="Ccw-pu-3EV"/>
+                <constraint firstItem="uEk-7S-M5Z" firstAttribute="height" secondItem="5uS-LZ-Gqv" secondAttribute="height" id="KX0-hY-zXe"/>
+                <constraint firstItem="uEk-7S-M5Z" firstAttribute="width" secondItem="5uS-LZ-Gqv" secondAttribute="width" id="MCe-2x-T41"/>
+                <constraint firstItem="uEk-7S-M5Z" firstAttribute="top" secondItem="wUR-5V-ebU" secondAttribute="bottom" constant="50" id="Y1K-fw-fKY"/>
                 <constraint firstItem="wUR-5V-ebU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="bam-Aa-lVo"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wUR-5V-ebU" secondAttribute="trailing" constant="24" id="yaO-uM-8Rg"/>
             </constraints>
@@ -88,6 +109,9 @@
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

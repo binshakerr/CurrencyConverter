@@ -10,9 +10,8 @@ import RxSwift
 import RxCocoa
 
 protocol ConverterViewModelInputs: AnyObject {
-    var searchSubject: PublishSubject<String> { get }
-    func getCurrencies()
-    func convertCurrency(from: String, to: String, amount: Float)
+    var converterUnitSubject: BehaviorRelay<ConvertUnit> { get }
+    func viewDidLoad()
 }
 
 protocol ConverterViewModelOutputs: AnyObject {
@@ -36,9 +35,9 @@ final class ConverterViewModel: ConverterViewModelProtocol {
     var outputs: ConverterViewModelOutputs { self }
     
     //MARK: - Inputs
-    let searchSubject = PublishSubject<String>()
+    var converterUnitSubject = BehaviorRelay<ConvertUnit>(value: ConvertUnit(from: "", to: "", amount: 1.0))
 
-
+    
     //MARK: - Outputs
     let screenTitle = "Currency Converter"
     let currencySubject = BehaviorRelay<[CurrencySymbol]>(value: [])
@@ -52,9 +51,34 @@ final class ConverterViewModel: ConverterViewModelProtocol {
     
     init(repository: ConverterRepositoryType) {
         self.repository = repository
+        bindInputs()
     }
     
-    func getCurrencies() {
+    var isValid: Observable<Bool> {
+        converterUnitSubject.map {
+            guard $0.amount > 0 else { return false }
+            guard !$0.from.prefix(3).isEmpty else { return false }
+            guard !$0.to.prefix(3).isEmpty else { return false }
+            return true
+        }
+    }
+    
+    private func bindInputs() {
+        isValid
+            .subscribe(onNext: { [weak self] inputsValid in
+                guard let self = self else { return }
+                if inputsValid {
+                    self.convertCurrency(from: self.converterUnitSubject.value.from, to: self.converterUnitSubject.value.to, amount: self.converterUnitSubject.value.amount)
+                }
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func viewDidLoad() {
+        getCurrencies()
+    }
+    
+    private func getCurrencies() {
         stateSubject.accept(.loading)
         
         repository
@@ -62,7 +86,7 @@ final class ConverterViewModel: ConverterViewModelProtocol {
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
                 self.stateSubject.accept(response.count > 0 ? .populated : .empty)
-                self.currencySubject.accept(response)
+                self.currencySubject.accept(response.sorted(by: { $0.symbol < $1.symbol } ))
             }, onError: { [weak self] error in
                 guard let self = self else { return }
                 self.stateSubject.accept(.error)
@@ -72,7 +96,7 @@ final class ConverterViewModel: ConverterViewModelProtocol {
     }
   
     
-    func convertCurrency(from: String, to: String, amount: Float) {
+    private func convertCurrency(from: String, to: String, amount: Float) {
         stateSubject.accept(.loading)
         
         repository

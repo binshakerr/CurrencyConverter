@@ -33,7 +33,6 @@
 		DC04046D292626D600BAAB1A /* DataState.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04046C292626D600BAAB1A /* DataState.swift */; };
 		DC04046F292626E000BAAB1A /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04046E292626E000BAAB1A /* Utils.swift */; };
 		DC0404722926270600BAAB1A /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404712926270600BAAB1A /* Alamofire */; };
-		DC0404752926271B00BAAB1A /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404742926271B00BAAB1A /* Kingfisher */; };
 		DC0404782926276100BAAB1A /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */; };
 		DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047A292627A800BAAB1A /* NVActivityIndicatorView */; };
 		DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */; };
@@ -48,6 +47,7 @@
 		DC8FA59929277CC900AEDB04 /* ConvertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */; };
 		DC8FA59B29277CDA00AEDB04 /* ConvertQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */; };
 		DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59C2927841300AEDB04 /* Parser.swift */; };
+		DC8FA59F2927D5F100AEDB04 /* ConvertUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,6 +112,7 @@
 		DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertInfo.swift; sourceTree = "<group>"; };
 		DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertQuery.swift; sourceTree = "<group>"; };
 		DC8FA59C2927841300AEDB04 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
+		DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertUnit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,7 +122,6 @@
 			files = (
 				DC040492292628A200BAAB1A /* RxCocoa in Frameworks */,
 				DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */,
-				DC0404752926271B00BAAB1A /* Kingfisher in Frameworks */,
 				DC0404722926270600BAAB1A /* Alamofire in Frameworks */,
 				DC0404782926276100BAAB1A /* IQKeyboardManagerSwift in Frameworks */,
 				DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */,
@@ -331,6 +331,7 @@
 				DC8FA59629277C1E00AEDB04 /* ConvertResult.swift */,
 				DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */,
 				DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */,
+				DC8FA59E2927D5F100AEDB04 /* ConvertUnit.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -371,7 +372,6 @@
 			name = CurrencyConverter;
 			packageProductDependencies = (
 				DC0404712926270600BAAB1A /* Alamofire */,
-				DC0404742926271B00BAAB1A /* Kingfisher */,
 				DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */,
 				DC04047A292627A800BAAB1A /* NVActivityIndicatorView */,
 				DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */,
@@ -455,7 +455,6 @@
 			mainGroup = DC04040C2924DE1600BAAB1A;
 			packageReferences = (
 				DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */,
-				DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
 				DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */,
@@ -621,6 +620,7 @@
 				DC04045C292626B100BAAB1A /* Enums.swift in Sources */,
 				DC0404512924E03F00BAAB1A /* ConverterViewController.swift in Sources */,
 				DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */,
+				DC8FA59F2927D5F100AEDB04 /* ConvertUnit.swift in Sources */,
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
 				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,
 				DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */,
@@ -988,14 +988,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 7.0.0;
-			};
-		};
 		DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager.git";
@@ -1027,11 +1019,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
-		};
-		DC0404742926271B00BAAB1A /* Kingfisher */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC0404732926271B00BAAB1A /* XCRemoteSwiftPackageReference "Kingfisher" */;
-			productName = Kingfisher;
 		};
 		DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */ = {
 			isa = XCSwiftPackageProductDependency;

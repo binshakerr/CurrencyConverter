@@ -9,7 +9,7 @@ import Foundation
 
 struct ConvertResult: Decodable {
     let date: String
-    let historical: String
+    let historical: String?
     let info: ConvertInfo
     let query: ConvertQuery
     let result: Double

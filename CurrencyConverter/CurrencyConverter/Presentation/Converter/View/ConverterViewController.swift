@@ -26,6 +26,7 @@ class ConverterViewController: UIViewController {
     private var toCurrencyDropdown: DropDown!
     private var fromDropDownExpanded = false
     private var toDropDownExpanded = false
+    private var convertUnit = ConvertUnit(from: "", to: "", amount: 1.0)
     
     //MARK: - Life cycle
     init(viewModel: ConverterViewModelProtocol) {
@@ -41,7 +42,7 @@ class ConverterViewController: UIViewController {
         super.viewDidLoad()
         setupUI()
         bindViewModel()
-        viewModel.getCurrencies()
+        viewModel.inputs.viewDidLoad()
     }
     
     //MARK: -
@@ -58,8 +59,10 @@ class ConverterViewController: UIViewController {
         fromCurrencyDropdown = DropDown()
         fromCurrencyDropdown.anchorView = fromCurrencyDropdownTextField
         fromCurrencyDropdown.selectionAction = { [weak self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self?.fromCurrencyDropdownTextField.text = item
+            guard let self = self else { return }
+            self.fromCurrencyDropdownTextField.text = item
+            self.convertUnit.from = String(item.prefix(3))
+            self.viewModel.converterUnitSubject.accept(self.convertUnit)
         }
         
         let toTap = UITapGestureRecognizer(target: self, action: #selector(toggleToDropdown))
@@ -68,8 +71,10 @@ class ConverterViewController: UIViewController {
         toCurrencyDropdown = DropDown()
         toCurrencyDropdown.anchorView = toCurrencyDropdownTextField
         toCurrencyDropdown.selectionAction = { [weak self] (index: Int, item: String) in
-            print("Selected item: \(item) at index: \(index)")
-            self?.toCurrencyDropdownTextField.text = item
+            guard let self = self else { return }
+            self.toCurrencyDropdownTextField.text = item
+            self.convertUnit.to = String(item.prefix(3))
+            self.viewModel.converterUnitSubject.accept(self.convertUnit)
         }
     }
     
@@ -94,7 +99,6 @@ class ConverterViewController: UIViewController {
     }
     
     private func bindViewModel() {
-        bindInputs()
         bindOutputs()
     }
     
@@ -133,35 +137,25 @@ class ConverterViewController: UIViewController {
             .disposed(by: disposeBag)
     }
     
-    func bindInputs() {
-//        searchController.searchBar.rx.searchButtonClicked
-//            .compactMap {self.searchController.searchBar.text}
-//            .bind(to: viewModel.inputs.searchSubject)
-//            .disposed(by: disposeBag)
-//
-//        searchTable.rx.itemSelected.subscribe(onNext: { [weak self] item in
-//            self?.openPhotoDetails(item.row)
-//        })
-//            .disposed(by: disposeBag)
-    }
-    
     
     //MARK: - Actions
     @IBAction func swapButtonPressed(_ sender: Any) {
         
+        let from = convertUnit.from
+        let to = convertUnit.to
+        
+        fromCurrencyDropdownTextField.text = to
+        toCurrencyDropdownTextField.text = from
+        
+        convertUnit.from = to
+        convertUnit.to = from
+        
+        viewModel.inputs.converterUnitSubject.accept(convertUnit)
     }
     
     
-}
-
-
-
-extension ConverterViewController: UITextFieldDelegate {
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
-        if !(fromCurrencyDropdownTextField.text?.isEmpty ?? false) && !(toCurrencyDropdownTextField.text?.isEmpty ?? false) {
-            viewModel.inputs.convertCurrency(from: fromCurrencyDropdownTextField.text ?? "", to: toCurrencyDropdownTextField.text ?? "", amount: (fromValueTextField.text! as NSString).floatValue)
-        }
+    @IBAction func fromValueFieldChanged(_ sender: Any) {
+        convertUnit.amount = ((fromValueTextField.text ?? "") as NSString).floatValue
+        viewModel.inputs.converterUnitSubject.accept(convertUnit)
     }
-    
 }

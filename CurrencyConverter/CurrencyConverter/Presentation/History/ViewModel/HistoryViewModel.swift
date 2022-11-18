@@ -11,6 +11,7 @@ import RxCocoa
 
 protocol HistoryViewModelInputs: AnyObject {
     func viewDidLoad()
+    var daysRange: [String] { get set }
 }
 
 protocol HistoryViewModelOutputs: AnyObject {
@@ -39,8 +40,9 @@ final class HistoryViewModel: HistoryViewModelProtocol {
     let historySubject = BehaviorRelay<[HistoryRate]>(value: [])
     let stateSubject = BehaviorRelay<DataState?>(value: nil)
     let errorSubject = BehaviorRelay<String?>(value: nil)
-    var screenTitle = "Currency Converter"
+    var screenTitle = "History"
     let cellId = "HistoryCell"
+    var daysRange = Date.getDates(forLastNDays: 3)
 
     var messageLabelTitle: String {
         "Rates of conversion between \(convertUnit.from) and \(convertUnit.to) last 3 days"
@@ -57,11 +59,9 @@ final class HistoryViewModel: HistoryViewModelProtocol {
     
     private func getHistory() {
         stateSubject.accept(.loading)
-        
-        let lastThreeDays = Date.getDates(forLastNDays: 3)
-        
+                
         repository
-            .getHistory(startDate: lastThreeDays.last ?? "", endDate: lastThreeDays.first ?? "", base: convertUnit.from, symbols: convertUnit.to)
+            .getHistory(startDate: daysRange.last ?? "", endDate: daysRange.first ?? "", base: convertUnit.from, symbols: convertUnit.to)
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
                 self.stateSubject.accept(response.rates.count > 0 ? .populated : .empty)

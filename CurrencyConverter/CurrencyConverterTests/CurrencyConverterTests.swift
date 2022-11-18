@@ -48,31 +48,86 @@ final class CurrencyConverterTests: XCTestCase {
         XCTAssertEqual(converterViewModel.outputs.screenTitle, "Currency Converter")
     }
 
-//    func test_getCurrencies_success() {
-//        // Given
-//        currenciesData = Utils.MockResponseType.CurrenciesSuccessResponse.sampleDataFor(self)
-//        let decodedItem = try? JSONDecoder().decode(CurrenciesContainerResponse.self, from: currenciesData)
-//        converterRepository.currenciesStubData = decodedItem?.symbols.map {
-//            CurrencySymbol(symbol: $0.key, fullName: $0.value)
-//        }
-//
-//        // When
-//        let searchObserver = scheduler.createObserver([CurrencySymbol].self)
-//        converterViewModel
-//            .outputs
-//            .currencySubject
-//            .bind(to: searchObserver)
-//            .disposed(by: disposeBag)
-//        scheduler
-//            .createColdObservable([.next(10, "horse")])
-//            .bind(to: converterViewModel.inputs.viewDidLoad())
-//            .disposed(by: disposeBag)
-//        scheduler.start()
-//
-//        // Then
-//        let searchElement = searchObserver.events.last?.value.element
-//        XCTAssertEqual(searchElement?.count, 184)
-//    }
+    func test_getCurrencies_success() {
+        // Given
+        currenciesData = Utils.MockResponseType.CurrenciesSuccessResponse.sampleDataFor(self)
+        let decodedItem = try? JSONDecoder().decode(CurrenciesContainerResponse.self, from: currenciesData)
+        converterRepository.currenciesStubData = decodedItem?.symbols.map {
+            CurrencySymbol(symbol: $0.key, fullName: $0.value)
+        }
 
+        // When
+        let currencyObserver = scheduler.createObserver([CurrencySymbol].self)
+        converterViewModel
+            .outputs
+            .currencySubject
+            .bind(to: currencyObserver)
+            .disposed(by: disposeBag)
+        converterViewModel.inputs.viewDidLoad()
+        scheduler.start()
+
+        // Then
+        let currencyElement = currencyObserver.events.last?.value.element
+        XCTAssertEqual(currencyElement?.count, 169)
+    }
+    
+    func test_convertCurrency_success() {
+        
+    }
+
+    func test_convertCurrency_wrongAmount_failure() {
+        
+    }
+    
+    func test_historyViewModel_initialState() {
+        XCTAssertTrue(historyViewModel.outputs.historySubject.value.isEmpty)
+        XCTAssertEqual(historyViewModel.outputs.screenTitle, "History")
+    }
+    
+    func test_history_success() {
+        // Given
+        convertUnit = ConvertUnit(from: "USD", to: "EGP", amount: 1.0)
+        historyData = Utils.MockResponseType.HistorySuccessResponse.sampleDataFor(self)
+        let decodedItem = try? JSONDecoder().decode(HistoryResponse.self, from: historyData)
+        converterRepository.historyStubData = decodedItem
+        
+        // When
+        let historyObserver = scheduler.createObserver([HistoryRate].self)
+        historyViewModel
+            .outputs
+            .historySubject
+            .bind(to: historyObserver)
+            .disposed(by: disposeBag)
+        historyViewModel.inputs.viewDidLoad()
+        scheduler.start()
+
+        // Then
+        let historyElement = historyObserver.events.last?.value.element
+        XCTAssertEqual(historyElement?.count, 3)
+        XCTAssert(historyElement?.first?.date ?? "" < historyElement?.last?.date ?? "")
+    }
+    
+    func test_history_wrongDate_failure() {
+        // Given
+        convertUnit = ConvertUnit(from: "USD", to: "EGP", amount: 1.0)
+        historyData = Utils.MockResponseType.HistoryWrongDateResponse.sampleDataFor(self)
+        let decodedItem = try? JSONDecoder().decode(HistoryResponse.self, from: historyData)
+        converterRepository.historyStubData = decodedItem
+        
+        // When
+        let historyObserver = scheduler.createObserver([HistoryRate].self)
+        historyViewModel
+            .outputs
+            .historySubject
+            .bind(to: historyObserver)
+            .disposed(by: disposeBag)
+        historyViewModel.daysRange = ["2022-11-16", "2022-11-17", "2022-11-18"]
+        historyViewModel.inputs.viewDidLoad()
+        scheduler.start()
+
+        // Then
+        let historyElement = historyObserver.events.last?.value.element
+        XCTAssertEqual(historyElement?.count, 0)
+    }
     
 }

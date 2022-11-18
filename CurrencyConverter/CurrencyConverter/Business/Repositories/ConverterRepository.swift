@@ -10,7 +10,7 @@ import RxSwift
 
 protocol ConverterRepositoryType {
     func getCurrencies() -> Observable<[CurrencySymbol]>
-    func convertCurrency(from: String, to: String, amount: Int) -> Observable<String>
+    func convertCurrency(from: String, to: String, amount: Float) -> Observable<ConvertResult>
 }
 
 
@@ -44,10 +44,10 @@ extension ConverterRepository: ConverterRepositoryType {
         }
     }
     
-    func convertCurrency(from: String, to: String, amount: Int) -> Observable<String> {
+    func convertCurrency(from: String, to: String, amount: Float) -> Observable<ConvertResult> {
         return Observable.create { [weak self] observer in
             let request = ConverterService.convert(amount: amount, from: from, to: to)
-            self?.networkManager.request(request, type: String.self) { result in
+            self?.networkManager.request(request, type: ConvertResult.self) { result in
                 switch result {
                 case .success(let response):
                     observer.onNext(response)

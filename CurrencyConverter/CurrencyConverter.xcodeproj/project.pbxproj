@@ -44,6 +44,10 @@
 		DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */; };
 		DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */; };
 		DC8FA595292775C000AEDB04 /* CurrencySymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */; };
+		DC8FA59729277C1E00AEDB04 /* ConvertResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59629277C1E00AEDB04 /* ConvertResult.swift */; };
+		DC8FA59929277CC900AEDB04 /* ConvertInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */; };
+		DC8FA59B29277CDA00AEDB04 /* ConvertQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */; };
+		DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59C2927841300AEDB04 /* Parser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -104,6 +108,10 @@
 		DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConverterRepository.swift; sourceTree = "<group>"; };
 		DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrenciesContainerResponse.swift; sourceTree = "<group>"; };
 		DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencySymbol.swift; sourceTree = "<group>"; };
+		DC8FA59629277C1E00AEDB04 /* ConvertResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertResult.swift; sourceTree = "<group>"; };
+		DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertInfo.swift; sourceTree = "<group>"; };
+		DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertQuery.swift; sourceTree = "<group>"; };
+		DC8FA59C2927841300AEDB04 /* Parser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -298,6 +306,7 @@
 				DC040459292626B100BAAB1A /* NetworkLogger.swift */,
 				DC04045A292626B100BAAB1A /* NetworkReachability.swift */,
 				DC04045B292626B100BAAB1A /* EndPoint.swift */,
+				DC8FA59C2927841300AEDB04 /* Parser.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -319,6 +328,9 @@
 				DC04048C2926282A00BAAB1A /* ErrorResponse.swift */,
 				DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */,
 				DC8FA594292775C000AEDB04 /* CurrencySymbol.swift */,
+				DC8FA59629277C1E00AEDB04 /* ConvertResult.swift */,
+				DC8FA59829277CC900AEDB04 /* ConvertInfo.swift */,
+				DC8FA59A29277CDA00AEDB04 /* ConvertQuery.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -598,8 +610,10 @@
 				DC04045D292626B100BAAB1A /* NetworkManager.swift in Sources */,
 				DC0404192924DE1600BAAB1A /* AppDelegate.swift in Sources */,
 				DC8FA595292775C000AEDB04 /* CurrencySymbol.swift in Sources */,
+				DC8FA59729277C1E00AEDB04 /* ConvertResult.swift in Sources */,
 				DC04046B292626CA00BAAB1A /* UIView+AutoLayout.swift in Sources */,
 				DC040460292626B100BAAB1A /* EndPoint.swift in Sources */,
+				DC8FA59929277CC900AEDB04 /* ConvertInfo.swift in Sources */,
 				DC040469292626CA00BAAB1A /* UIViewController+Extensions.swift in Sources */,
 				DC04046A292626CA00BAAB1A /* UIView+Extensions.swift in Sources */,
 				DC04046F292626E000BAAB1A /* Utils.swift in Sources */,
@@ -609,9 +623,11 @@
 				DC040468292626CA00BAAB1A /* UIImageView+Extension.swift in Sources */,
 				DC0404542924E05400BAAB1A /* ConverterViewModel.swift in Sources */,
 				DC04046D292626D600BAAB1A /* DataState.swift in Sources */,
+				DC8FA59D2927841300AEDB04 /* Parser.swift in Sources */,
 				DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */,
 				DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */,
 				DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */,
+				DC8FA59B29277CDA00AEDB04 /* ConvertQuery.swift in Sources */,
 				DC04045F292626B100BAAB1A /* NetworkReachability.swift in Sources */,
 				DC8FA58F29276C2500AEDB04 /* ConverterService.swift in Sources */,
 				DC040462292626BE00BAAB1A /* Environment.swift in Sources */,

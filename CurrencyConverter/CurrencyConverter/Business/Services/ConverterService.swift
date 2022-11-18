@@ -10,7 +10,7 @@ import Alamofire
 
 enum ConverterService {
     case symbols
-    case convert(amount: Int, from: String, to: String)
+    case convert(amount: Float, from: String, to: String)
 }
 
 extension ConverterService: EndPoint {

@@ -12,10 +12,12 @@ import RxCocoa
 protocol ConverterViewModelInputs: AnyObject {
     var searchSubject: PublishSubject<String> { get }
     func getCurrencies()
+    func convertCurrency(from: String, to: String, amount: Float)
 }
 
 protocol ConverterViewModelOutputs: AnyObject {
-    var dataSubject: BehaviorRelay<[CurrencySymbol]> { get }
+    var currencySubject: BehaviorRelay<[CurrencySymbol]> { get }
+    var conversionSubject: BehaviorRelay<Double> { get }
     var stateSubject: BehaviorRelay<DataState?> { get }
     var errorSubject: BehaviorRelay<String?> { get }
     var screenTitle: String { get }
@@ -39,7 +41,8 @@ final class ConverterViewModel: ConverterViewModelProtocol {
 
     //MARK: - Outputs
     let screenTitle = "Currency Converter"
-    let dataSubject = BehaviorRelay<[CurrencySymbol]>(value: [])
+    let currencySubject = BehaviorRelay<[CurrencySymbol]>(value: [])
+    let conversionSubject = BehaviorRelay<Double>(value: 0)
     let stateSubject = BehaviorRelay<DataState?>(value: nil)
     let errorSubject = BehaviorRelay<String?>(value: nil)
     
@@ -59,7 +62,7 @@ final class ConverterViewModel: ConverterViewModelProtocol {
             .subscribe(onNext: { [weak self] response in
                 guard let self = self else { return }
                 self.stateSubject.accept(response.count > 0 ? .populated : .empty)
-                self.dataSubject.accept(response)
+                self.currencySubject.accept(response)
             }, onError: { [weak self] error in
                 guard let self = self else { return }
                 self.stateSubject.accept(.error)
@@ -67,6 +70,23 @@ final class ConverterViewModel: ConverterViewModelProtocol {
             })
             .disposed(by: disposeBag)
     }
+  
     
+    func convertCurrency(from: String, to: String, amount: Float) {
+        stateSubject.accept(.loading)
+        
+        repository
+            .convertCurrency(from: from, to: to, amount: amount)
+            .subscribe(onNext: { [weak self] response in
+                guard let self = self else { return }
+                self.stateSubject.accept(.populated)
+                self.conversionSubject.accept(response.result)
+            }, onError: { [weak self] error in
+                guard let self = self else { return }
+                self.stateSubject.accept(.error)
+                self.errorSubject.accept(error.localizedDescription)
+            })
+            .disposed(by: disposeBag)
+    }
     
 }

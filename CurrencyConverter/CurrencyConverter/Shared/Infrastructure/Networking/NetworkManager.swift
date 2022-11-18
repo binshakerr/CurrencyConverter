@@ -27,6 +27,7 @@ class NetworkManager {
     
     private let session: Session
     static let shared = NetworkManager(session: customSessionManager)
+    private let parser = Parser()
     
     init(session: Session) {
         self.session = session
@@ -51,34 +52,9 @@ extension NetworkManager: NetworkManagerType {
         session
             .request(request)
             .validate()
-            .responseJSON { result in
-                let statusCode = result.response?.statusCode ?? 0
-                let decoder = JSONDecoder()
-                
-                switch result.result {
-                case .success:
-                    do {
-                        guard let data = result.data else { return }
-                        let result = try decoder.decode(type.self, from: data)
-                        completion(.success(result))
-                    } catch let error {
-                        completion(.failure(error))
-                    }
-                case .failure(let error):
-                    do {
-                        guard let data = result.data else {
-                            completion(.failure(error))
-                            return
-                        }
-                        let result = try decoder.decode(ErrorResponse.self, from: data)
-                        let userInfo: [String : Any] = [
-                            NSLocalizedDescriptionKey:  NSLocalizedString("Error code: \(statusCode)", value: result.message, comment: "") ,
-                        ]
-                        let error = NSError(domain: "", code: 0, userInfo: userInfo)
-                        completion(.failure(error))
-                    } catch let error {
-                        completion(.failure(error))
-                    }
+            .responseJSON { [weak self] result in
+                self?.parser.parseResponse(result, type: type) { result in
+                    completion(result)
                 }
             }
     }

@@ -114,7 +114,7 @@ class ConverterViewController: UIViewController {
         })
             .disposed(by: disposeBag)
         
-        viewModel.outputs.dataSubject
+        viewModel.outputs.currencySubject
             .subscribe(onNext:  { [weak self] symbols in
                 guard let self = self else { return }
                 let strings = symbols.map {
@@ -122,6 +122,13 @@ class ConverterViewController: UIViewController {
                 }
                 self.fromCurrencyDropdown.dataSource = strings
                 self.toCurrencyDropdown.dataSource = strings
+            })
+            .disposed(by: disposeBag)
+        
+        viewModel.outputs.conversionSubject
+            .subscribe(onNext:  { [weak self] result in
+                guard let self = self else { return }
+                self.toValueTextField.text = "\(result)"
             })
             .disposed(by: disposeBag)
     }
@@ -144,5 +151,17 @@ class ConverterViewController: UIViewController {
         
     }
     
+    
+}
+
+
+
+extension ConverterViewController: UITextFieldDelegate {
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if !(fromCurrencyDropdownTextField.text?.isEmpty ?? false) && !(toCurrencyDropdownTextField.text?.isEmpty ?? false) {
+            viewModel.inputs.convertCurrency(from: fromCurrencyDropdownTextField.text ?? "", to: toCurrencyDropdownTextField.text ?? "", amount: (fromValueTextField.text! as NSString).floatValue)
+        }
+    }
     
 }

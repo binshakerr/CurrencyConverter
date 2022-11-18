@@ -1,0 +1,8 @@
+{
+  "error": {
+    "code": 504,
+    "info": "You have entered an invalid Time-Frame. [Required format: ...&start_date=YYYY-MM-DD&end_date=YYYY-MM-DD]",
+    "type": "invalid_time_frame"
+  },
+  "success": false
+}

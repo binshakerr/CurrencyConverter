@@ -36,8 +36,6 @@
 		DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047A292627A800BAAB1A /* NVActivityIndicatorView */; };
 		DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */ = {isa = PBXBuildFile; productRef = DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */; };
 		DC04048F2926282A00BAAB1A /* ErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC04048C2926282A00BAAB1A /* ErrorResponse.swift */; };
-		DC040492292628A200BAAB1A /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = DC040491292628A200BAAB1A /* RxCocoa */; };
-		DC040494292628A200BAAB1A /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = DC040493292628A200BAAB1A /* RxSwift */; };
 		DC8FA58F29276C2500AEDB04 /* ConverterService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA58E29276C2500AEDB04 /* ConverterService.swift */; };
 		DC8FA59129276C4200AEDB04 /* ConverterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA59029276C4200AEDB04 /* ConverterRepository.swift */; };
 		DC8FA593292774F700AEDB04 /* CurrenciesContainerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA592292774F700AEDB04 /* CurrenciesContainerResponse.swift */; };
@@ -55,6 +53,15 @@
 		DC8FA5AF2927F11000AEDB04 /* HistoryRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5AE2927F11000AEDB04 /* HistoryRate.swift */; };
 		DC8FA5B22927F7E300AEDB04 /* HistoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5B02927F7E300AEDB04 /* HistoryCell.swift */; };
 		DC8FA5B32927F7E300AEDB04 /* HistoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5B12927F7E300AEDB04 /* HistoryCell.xib */; };
+		DC8FA5B92927FE5F00AEDB04 /* MockError.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5B52927FE5F00AEDB04 /* MockError.swift */; };
+		DC8FA5BB2927FE5F00AEDB04 /* XCTestCase+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5B62927FE5F00AEDB04 /* XCTestCase+Extensions.swift */; };
+		DC8FA5BD2927FE5F00AEDB04 /* MockURLProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5B72927FE5F00AEDB04 /* MockURLProtocol.swift */; };
+		DC8FA5D7292804DE00AEDB04 /* MockConverterRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC8FA5D6292804DE00AEDB04 /* MockConverterRepository.swift */; };
+		DC8FA5DE29280AE400AEDB04 /* CurrenciesSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5D829280A4900AEDB04 /* CurrenciesSuccessResponse.json */; };
+		DC8FA5DF29280AE400AEDB04 /* ConvertSuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5DA29280A6900AEDB04 /* ConvertSuccessResponse.json */; };
+		DC8FA5E029280AE400AEDB04 /* HistorySuccessResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5DC29280A7C00AEDB04 /* HistorySuccessResponse.json */; };
+		DC8FA5E529280CC000AEDB04 /* ConvertWrongAmountResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5E329280C8100AEDB04 /* ConvertWrongAmountResponse.json */; };
+		DC8FA5E629280CC000AEDB04 /* HistoryWrongDateResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = DC8FA5E129280C1700AEDB04 /* HistoryWrongDateResponse.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +134,15 @@
 		DC8FA5AE2927F11000AEDB04 /* HistoryRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryRate.swift; sourceTree = "<group>"; };
 		DC8FA5B02927F7E300AEDB04 /* HistoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryCell.swift; sourceTree = "<group>"; };
 		DC8FA5B12927F7E300AEDB04 /* HistoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryCell.xib; sourceTree = "<group>"; };
+		DC8FA5B52927FE5F00AEDB04 /* MockError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockError.swift; sourceTree = "<group>"; };
+		DC8FA5B62927FE5F00AEDB04 /* XCTestCase+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "XCTestCase+Extensions.swift"; sourceTree = "<group>"; };
+		DC8FA5B72927FE5F00AEDB04 /* MockURLProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockURLProtocol.swift; sourceTree = "<group>"; };
+		DC8FA5D6292804DE00AEDB04 /* MockConverterRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockConverterRepository.swift; sourceTree = "<group>"; };
+		DC8FA5D829280A4900AEDB04 /* CurrenciesSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = CurrenciesSuccessResponse.json; sourceTree = "<group>"; };
+		DC8FA5DA29280A6900AEDB04 /* ConvertSuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConvertSuccessResponse.json; sourceTree = "<group>"; };
+		DC8FA5DC29280A7C00AEDB04 /* HistorySuccessResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HistorySuccessResponse.json; sourceTree = "<group>"; };
+		DC8FA5E129280C1700AEDB04 /* HistoryWrongDateResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = HistoryWrongDateResponse.json; sourceTree = "<group>"; };
+		DC8FA5E329280C8100AEDB04 /* ConvertWrongAmountResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ConvertWrongAmountResponse.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,12 +150,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DC040492292628A200BAAB1A /* RxCocoa in Frameworks */,
 				DC04047B292627A800BAAB1A /* NVActivityIndicatorView in Frameworks */,
 				DC0404722926270600BAAB1A /* Alamofire in Frameworks */,
 				DC0404782926276100BAAB1A /* IQKeyboardManagerSwift in Frameworks */,
 				DC04047D292627A800BAAB1A /* NVActivityIndicatorViewExtended in Frameworks */,
-				DC040494292628A200BAAB1A /* RxSwift in Frameworks */,
 				80BA07272AF72EE2F4BBEE20 /* Pods_CurrencyConverter.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +237,9 @@
 			isa = PBXGroup;
 			children = (
 				DC04042F2924DE1700BAAB1A /* CurrencyConverterTests.swift */,
+				DC8FA5B42927FE5F00AEDB04 /* Helpers */,
+				DC8FA5D42928049800AEDB04 /* MockEntities */,
+				DC8FA5D5292804B000AEDB04 /* MockRepositories */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -397,6 +414,36 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		DC8FA5B42927FE5F00AEDB04 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5B52927FE5F00AEDB04 /* MockError.swift */,
+				DC8FA5B62927FE5F00AEDB04 /* XCTestCase+Extensions.swift */,
+				DC8FA5B72927FE5F00AEDB04 /* MockURLProtocol.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		DC8FA5D42928049800AEDB04 /* MockEntities */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5D829280A4900AEDB04 /* CurrenciesSuccessResponse.json */,
+				DC8FA5DA29280A6900AEDB04 /* ConvertSuccessResponse.json */,
+				DC8FA5E329280C8100AEDB04 /* ConvertWrongAmountResponse.json */,
+				DC8FA5DC29280A7C00AEDB04 /* HistorySuccessResponse.json */,
+				DC8FA5E129280C1700AEDB04 /* HistoryWrongDateResponse.json */,
+			);
+			path = MockEntities;
+			sourceTree = "<group>";
+		};
+		DC8FA5D5292804B000AEDB04 /* MockRepositories */ = {
+			isa = PBXGroup;
+			children = (
+				DC8FA5D6292804DE00AEDB04 /* MockConverterRepository.swift */,
+			);
+			path = MockRepositories;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -420,8 +467,6 @@
 				DC0404772926276100BAAB1A /* IQKeyboardManagerSwift */,
 				DC04047A292627A800BAAB1A /* NVActivityIndicatorView */,
 				DC04047C292627A800BAAB1A /* NVActivityIndicatorViewExtended */,
-				DC040491292628A200BAAB1A /* RxCocoa */,
-				DC040493292628A200BAAB1A /* RxSwift */,
 			);
 			productName = CurrencyConverter;
 			productReference = DC0404152924DE1600BAAB1A /* CurrencyConverter.app */;
@@ -435,6 +480,7 @@
 				DC0404272924DE1700BAAB1A /* Sources */,
 				DC0404282924DE1700BAAB1A /* Frameworks */,
 				DC0404292924DE1700BAAB1A /* Resources */,
+				AA9427E66F1B5052C70A22D8 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -502,7 +548,6 @@
 				DC0404702926270600BAAB1A /* XCRemoteSwiftPackageReference "Alamofire" */,
 				DC0404762926276100BAAB1A /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */,
-				DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */,
 			);
 			productRefGroup = DC0404162924DE1600BAAB1A /* Products */;
 			projectDirPath = "";
@@ -532,6 +577,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8FA5E529280CC000AEDB04 /* ConvertWrongAmountResponse.json in Resources */,
+				DC8FA5E629280CC000AEDB04 /* HistoryWrongDateResponse.json in Resources */,
+				DC8FA5DE29280AE400AEDB04 /* CurrenciesSuccessResponse.json in Resources */,
+				DC8FA5DF29280AE400AEDB04 /* ConvertSuccessResponse.json in Resources */,
+				DC8FA5E029280AE400AEDB04 /* HistorySuccessResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -577,6 +627,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverter-CurrencyConverterUITests/Pods-CurrencyConverter-CurrencyConverterUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AA9427E66F1B5052C70A22D8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CurrencyConverterTests/Pods-CurrencyConverterTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		CC13FD605FB37E768A47D072 /* [CP] Check Pods Manifest.lock */ = {
@@ -690,7 +757,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC8FA5D7292804DE00AEDB04 /* MockConverterRepository.swift in Sources */,
+				DC8FA5B92927FE5F00AEDB04 /* MockError.swift in Sources */,
+				DC8FA5BB2927FE5F00AEDB04 /* XCTestCase+Extensions.swift in Sources */,
 				DC0404302924DE1700BAAB1A /* CurrencyConverterTests.swift in Sources */,
+				DC8FA5BD2927FE5F00AEDB04 /* MockURLProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1056,14 +1127,6 @@
 				minimumVersion = 5.0.0;
 			};
 		};
-		DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 6.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1086,16 +1149,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = DC040479292627A800BAAB1A /* XCRemoteSwiftPackageReference "NVActivityIndicatorView" */;
 			productName = NVActivityIndicatorViewExtended;
-		};
-		DC040491292628A200BAAB1A /* RxCocoa */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxCocoa;
-		};
-		DC040493292628A200BAAB1A /* RxSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = DC040490292628A200BAAB1A /* XCRemoteSwiftPackageReference "RxSwift" */;
-			productName = RxSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -1,0 +1,9 @@
+
+{
+  "error": {
+    "code": 403,
+    "info": "You have not specified an amount to be converted. [Example: amount=5]",
+    "type": "invalid_conversion_amount"
+  },
+  "success": false
+}

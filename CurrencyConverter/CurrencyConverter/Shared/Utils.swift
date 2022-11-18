@@ -8,11 +8,13 @@
 import Foundation
 
 class Utils {
+    
     enum MockResponseType: String {
-        case SearchFullMock = "SearchFullMock"
-        case SearchEmptyMock = "SearchEmptyMock"
-        case ObjectDetailsSuccessMock = "ObjectDetailsSuccessMock"
-        case ObjectDetailsFailureMock = "ObjectDetailsFailureMock"
+        case CurrenciesSuccessResponse = "CurrenciesSuccessResponse"
+        case ConvertSuccessResponse = "ConvertSuccessResponse"
+        case ConvertWrongAmountResponse = "ConvertWrongAmountResponse"
+        case HistorySuccessResponse = "HistorySuccessResponse"
+        case HistoryWrongDateResponse = "HistoryWrongDateResponse"
         
         var sampleData: Data? {
             return jsonDataFromFile(self.rawValue)

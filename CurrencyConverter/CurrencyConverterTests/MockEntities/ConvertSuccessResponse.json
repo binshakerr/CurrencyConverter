@@ -1,0 +1,14 @@
+{
+  "date": "2022-11-18",
+  "info": {
+    "rate": 24.514904,
+    "timestamp": 1668797403
+  },
+  "query": {
+    "amount": 1,
+    "from": "USD",
+    "to": "EGP"
+  },
+  "result": 24.514904,
+  "success": true
+}

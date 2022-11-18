@@ -1,16 +1,16 @@
 platform :ios, '14.0'
+use_frameworks!
 
 target 'CurrencyConverter' do
-  # Comment the next line if you don't want to use dynamic frameworks
-  use_frameworks!
-
-  # Pods for CurrencyConverter
-
+  
   pod 'DropDown'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'CurrencyConverterTests' do
     inherit! :search_paths
-    # Pods for testing
+    pod 'RxBlocking'
+    pod 'RxTest'
   end
 
   target 'CurrencyConverterUITests' do
